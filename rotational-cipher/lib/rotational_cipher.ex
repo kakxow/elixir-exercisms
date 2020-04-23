@@ -10,10 +10,7 @@ defmodule RotationalCipher do
   @lower ?a..?z
   @spec rotate(text :: String.t(), shift :: integer) :: String.t()
   def rotate(text, shift) do
-    for <<c <- text>> do
-      rotate_char(c, shift)
-    end
-    |> to_string()
+    for <<c <- text>>, into: "", do: <<rotate_char(c, shift)>>
   end
 
   defp rotate_char(c, shift) do
