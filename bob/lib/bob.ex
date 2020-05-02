@@ -1,11 +1,51 @@
 defmodule Bob do
+  @punct_and_digits [
+    "!",
+    "@",
+    "#",
+    "$",
+    "%",
+    "^",
+    "&",
+    "*",
+    "(",
+    ")",
+    "-",
+    "_",
+    "+",
+    "=",
+    "[",
+    "]",
+    "{",
+    "}",
+    ":",
+    ";",
+    "\"",
+    "'",
+    "\\",
+    "|",
+    "/",
+    ".",
+    ",",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "0"
+  ]
   @spec hey(input :: String.t()) :: String.t()
   def hey(input) do
-    input = String.trim(input)
+    # Get rid of all non-letter characters.
+    input = String.trim(input) |> String.replace(@punct_and_digits, "")
 
     cond do
-      # Only whitespaces.
-      Regex.match?(~r"^\s*$", input) ->
+      # Only whitespaces - all trimmed.
+      input == "" ->
         "Fine. Be that way!"
 
       # Uppercase question.
@@ -32,11 +72,14 @@ defmodule Bob do
   """
   @spec upper?(input :: String.t()) :: boolean()
   def upper?(input) do
-    Regex.match?(~r"[[:alpha:]]"u, input) && !Regex.match?(~r"[[:lower:]]"u, input)
+    # Trim "?" as it may cause `String.upcase/1` to misbehave for my cause.
+    input = String.trim(input, "?")
+    # Separate check for whitespaces, since whitespace == String.upcase(whitespace)
+    input == String.upcase(input) and String.trim(input) != ""
   end
 
   @spec question?(input :: String.t()) :: boolean()
   def question?(input) do
-    Regex.match?(~r"^.*\?$", input)
+    String.ends_with?(input, "?")
   end
 end
