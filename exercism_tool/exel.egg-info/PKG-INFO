@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: exel
+Version: 0.1.0
+Summary: Tool for changing exercism elixir parameters for vscode elixirls.
+Home-page: https://github.com/
+Author: Maksim Sukhanov
+Author-email: kakxow@gmail.com
+License: GNU GPL v3.0
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
