@@ -25,6 +25,11 @@ def change_project_dir():
         json.dump(settings, f)
 
 
+def main():
+    execute_and_change_dir()
+    change_project_dir()
+    os.system("/bin/bash")
+
 if __name__ == "__main__":
     execute_and_change_dir()
     change_project_dir()

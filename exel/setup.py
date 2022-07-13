@@ -1,3 +1,4 @@
+from importlib.metadata import entry_points
 from setuptools import setup
 
 setup(
@@ -8,8 +9,13 @@ setup(
     author='Maksim Sukhanov',
     author_email='kakxow@gmail.com',
     license='GNU GPL v3.0',
-    packages=['exercism_tool'],
+    packages=['exel'],
     install_requires=[],
+    entry_points={
+        "console_scripts": [
+            "exel=exel.exel:main"
+        ]
+    },
 
     classifiers=[ 
         'Operating System :: POSIX :: Linux',        
