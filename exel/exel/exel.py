@@ -32,15 +32,15 @@ def add_commit():
         if line.startswith("??"):
             new_dir_name = line[3:-1]
             subprocess.run("git add -A".split())
-            subprocess.run(f"git commit -m \"{new_dir_name}\"")
+            subprocess.run(f"git commit -m \"{new_dir_name}\"".split())
             break
 
 
 def main():
+    add_commit()
     new_project_name = cli_arguments[3].split("=")[1]
     execute_and_change_dir(new_project_name)
     change_project_dir(new_project_name)
-    add_commit()
     os.system("/bin/bash")
 
 if __name__ == "__main__":
