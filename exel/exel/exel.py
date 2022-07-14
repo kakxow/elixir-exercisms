@@ -28,6 +28,7 @@ def change_project_dir():
 def main():
     execute_and_change_dir()
     change_project_dir()
+    os.system("history -a")
     os.system("/bin/bash")
 
 if __name__ == "__main__":
