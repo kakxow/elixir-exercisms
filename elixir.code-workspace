@@ -1,8 +1,1 @@
-{
-	"folders": [
-		{
-			"path": "."
-		}
-    ],
-    "settings": {"elixirLS.projectDir": "newsletter"}
-}
+{"folders": [{"path": "."}], "settings": {"elixirLS.projectDir": "chessboard"}}

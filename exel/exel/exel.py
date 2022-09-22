@@ -16,11 +16,11 @@ def execute_and_change_dir(new_project_name):
 
 
 def change_project_dir(new_project_name):
-    settings_path = root_path + "/elixir.code-workspace"
+    settings_path = root_path + "/.vscode/settings.json"
     with open(settings_path, encoding="utf-8") as f:
         settings = json.load(f)
 
-    settings["settings"]["elixirLS.projectDir"] = new_project_name
+    settings["elixirLS.projectDir"] = new_project_name
     with open(settings_path, "w", encoding="utf-8") as f:
         json.dump(settings, f)
 
